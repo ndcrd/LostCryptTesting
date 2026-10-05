@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Failed(Child)" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-04 11:30:54Z" end-time="2026-10-04 11:31:33Z" duration="39,4314822">
+  <test-suite type="TestSuite" id="1019" name="LostCryptTesting" fullname="LostCryptTesting" runstate="Runnable" testcasecount="8" result="Failed" site="Child" start-time="2026-10-04 11:30:54Z" end-time="2026-10-04 11:31:33Z" duration="39.431482" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1014" name="PlayModeTests.dll" fullname="D:/Dev/UnityHub/Projects/LostCryptTesting/Library/ScriptAssemblies/PlayModeTests.dll" runstate="Runnable" testcasecount="8" result="Failed" site="Child" start-time="2026-10-04 11:30:54Z" end-time="2026-10-04 11:31:33Z" duration="39.421638" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="14628" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1001" name="MovementTest" fullname="MovementTest" classname="MovementTest" runstate="Explicit" testcasecount="3" result="Failed" site="Child" start-time="2026-10-04 11:30:54Z" end-time="2026-10-04 11:31:21Z" duration="26.763576" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties>
+          <property name="Category" value="Movement" />
+        </properties>
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1003" name="MainSceneCharacterReachesWand" fullname="MovementTest.MainSceneCharacterReachesWand" methodname="MainSceneCharacterReachesWand" classname="MovementTest" runstate="Runnable" seed="604609099" result="Failed" start-time="2026-10-04 11:30:54Z" end-time="2026-10-04 11:31:21Z" duration="26.749136" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[Test took Longer than 25 seconds]]></message>
+            <stack-trace><![CDATA[at MovementTest+<MainSceneCharacterReachesWand>d__7.MoveNext () [0x0007a] in D:\Dev\UnityHub\Projects\LostCryptTesting\Assets\Tests\PlayModeTests\MovementTest.cs:55
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__8.MoveNext () [0x0004e] in .\Library\PackageCache\com.unity.test-framework@7a3849e09bd0\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Unloading the last loaded scene Assets/LostCrypt/Scenes/Main.unity(build index: 0), is not supported. Please use SceneManager.LoadScene()/EditorSceneManager.OpenScene() to switch to another scene.
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestSuite" id="1015" name="ValidationTests" fullname="ValidationTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-04 11:31:21Z" end-time="2026-10-04 11:31:21Z" duration="0.125944" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestFixture" id="1012" name="SceneValidationTests(&quot;Assets/LostCrypt/Scenes/Main.unity&quot;)" fullname="ValidationTests.SceneValidationTests(&quot;Assets/LostCrypt/Scenes/Main.unity&quot;)" classname="ValidationTests.SceneValidationTests" runstate="Explicit" testcasecount="1" result="Passed" start-time="2026-10-04 11:31:21Z" end-time="2026-10-04 11:31:21Z" duration="0.124574" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="Category" value="Validation" />
+          </properties>
+          <test-case id="1013" name="SaraAndWandArePresent" fullname="ValidationTests.SceneValidationTests(&quot;Assets/LostCrypt/Scenes/Main.unity&quot;).SaraAndWandArePresent" methodname="SaraAndWandArePresent" classname="ValidationTests.SceneValidationTests" runstate="Runnable" seed="1251223115" result="Passed" start-time="2026-10-04 11:31:21Z" end-time="2026-10-04 11:31:21Z" duration="0.122148" asserts="0">
+            <properties>
+              <property name="_JOINTYPE" value="UnityCombinatorial" />
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1009" name="WandTests" fullname="WandTests" classname="WandTests" runstate="Explicit" testcasecount="2" result="Passed" start-time="2026-10-04 11:31:21Z" end-time="2026-10-04 11:31:33Z" duration="12.530141" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties>
+          <property name="Category" value="Wand Tests" />
+        </properties>
+        <test-case id="1010" name="MainScene_CharacterCanTriggerWand" fullname="WandTests.MainScene_CharacterCanTriggerWand" methodname="MainScene_CharacterCanTriggerWand" classname="WandTests" runstate="Runnable" seed="10421129" result="Passed" start-time="2026-10-04 11:31:21Z" end-time="2026-10-04 11:31:33Z" duration="12.425652" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1011" name="MainScene_CharacterSwapsOutfits" fullname="WandTests.MainScene_CharacterSwapsOutfits" methodname="MainScene_CharacterSwapsOutfits" classname="WandTests" runstate="Runnable" seed="1736844884" result="Passed" start-time="2026-10-04 11:31:33Z" end-time="2026-10-04 11:31:33Z" duration="0.102317" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/NIKO/AppData/LocalLow/DefaultCompany/LostCryptTesting\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

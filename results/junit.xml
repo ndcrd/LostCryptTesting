@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="LostCryptTesting" tests="4" failures="1" errors="0" skipped="0" time="39.399">
+  <testsuite name="MovementTest" tests="1" failures="1" errors="0" skipped="0" time="26.749">
+    <testcase name="MainSceneCharacterReachesWand" classname="MovementTest" time="26.749">
+      <failure message="Test took Longer than 25 seconds" type="Failed">at MovementTest+&lt;MainSceneCharacterReachesWand&gt;d__7.MoveNext () [0x0007a] in D:\Dev\UnityHub\Projects\LostCryptTesting\Assets\Tests\PlayModeTests\MovementTest.cs:55
+at UnityEngine.TestTools.TestEnumerator+&lt;Execute&gt;d__8.MoveNext () [0x0004e] in .\Library\PackageCache\com.unity.test-framework@7a3849e09bd0\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52</failure>
+      <system-out>Unloading the last loaded scene Assets/LostCrypt/Scenes/Main.unity(build index: 0), is not supported. Please use SceneManager.LoadScene()/EditorSceneManager.OpenScene() to switch to another scene.</system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="ValidationTests.SceneValidationTests" tests="1" failures="0" errors="0" skipped="0" time="0.122">
+    <testcase name="SaraAndWandArePresent" classname="ValidationTests.SceneValidationTests" time="0.122" />
+  </testsuite>
+  <testsuite name="WandTests" tests="2" failures="0" errors="0" skipped="0" time="12.528">
+    <testcase name="MainScene_CharacterCanTriggerWand" classname="WandTests" time="12.426" />
+    <testcase name="MainScene_CharacterSwapsOutfits" classname="WandTests" time="0.102">
+      <system-out>Saving results to: C:/Users/NIKO/AppData/LocalLow/DefaultCompany/LostCryptTesting\TestResults.xml</system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
