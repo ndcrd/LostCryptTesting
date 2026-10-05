@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using NUnit.Framework;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
@@ -7,33 +9,55 @@ using UnityEngine.U2D.Animation;
 
 public class WandTests
 {
-    private Transform _characterTransform;
-    private float _testTimeout = 25.0f;
-    private Vector3 _wandPosition;
+    private Transform characterTransform;
+    private Vector3 wandPosition;
+
+    private readonly string kScene = "Assets/LostCrypt/Scenes/Main.unity";
+    
+    private readonly string puppetSara = "puppet_sara";
+    private readonly string saraVariant = "Sara Variant";
+    private readonly string wand = "WandPosition";
+    private readonly string spriteNameBefore = "Sara";
+    private readonly string expectedSpriteName = "Sara_var01";
+    
+    private readonly string spritePath = "Assets/LostCrypt/Character/Sprites/Sara_var01.psb";
 
     [UnityTest]
-    public IEnumerator MainScene_CharacterReachesWandAndEquipsArmor()
+    public IEnumerator MainScene_CharacterCanTriggerWand()
     {
-        SceneManager.LoadScene("Assets/LostCrypt/Scenes/Main.unity", LoadSceneMode.Single);
+        SceneManager.LoadScene(kScene, LoadSceneMode.Single);
         
-        // Skip first frame so Sara have a chance to appear on the screen
-        yield return null;
-        var puppet = GameObject.Find("puppet_sara");
+        yield return SceneUtils.WaitForSceneLoad();
+        
+        var puppet = GameObject.Find(puppetSara);
         var spriteLibrary = puppet.GetComponent<SpriteLibrary>();
-        
-        Assert.AreEqual(spriteLibrary.spriteLibraryAsset.name, "Sara");
 
-        var sara = GameObject.Find("Sara Variant");
-        _wandPosition = GameObject.Find("WandPosition").transform.position;
-        sara.gameObject.transform.position = _wandPosition;
+        Assert.AreEqual(spriteLibrary.spriteLibraryAsset.name, spriteNameBefore);
 
-        // var co = sara.GetComponent<CharacterController2D>();
+        var sara = GameObject.Find(saraVariant);
+        wandPosition = GameObject.Find(wand).transform.position;
+        sara.gameObject.transform.position = wandPosition;
         
-        
-        
-        // Wait for Wand pickup animation to be over.
         yield return new WaitForSeconds(12);
 
-        Assert.AreEqual(spriteLibrary.spriteLibraryAsset.name, "Sara_var01");
+        Assert.AreEqual(spriteLibrary.spriteLibraryAsset.name, expectedSpriteName);
+    }
+
+    [UnityTest]
+    public IEnumerator MainScene_CharacterSwapsOutfits()
+    {
+        SceneManager.LoadScene(kScene, LoadSceneMode.Single);
+        var assetToSwap = AssetDatabase.LoadAssetAtPath<SpriteLibraryAsset>(
+            spritePath);
+        
+        yield return SceneUtils.WaitForSceneLoad();
+        
+        var spriteLibraryBefore = GameObject.Find(puppetSara).GetComponent<SpriteLibrary>().spriteLibraryAsset.name;
+        Debug.Log(spriteLibraryBefore);
+        var playerControllerUnderTest = GameObject.Find(saraVariant).GetComponent<CharacterController2D>();
+
+        playerControllerUnderTest.SwapSprites(assetToSwap);
+
+        Assert.AreNotEqual(expectedSpriteName, spriteLibraryBefore);
     }
 }
